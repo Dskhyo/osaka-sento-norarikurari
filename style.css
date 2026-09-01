@@ -1,0 +1,3921 @@
+/* ========================================
+RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  font-family:
+    "Noto Sans JP",
+    sans-serif;
+
+  color:
+    #242424;
+
+  background:
+    #f7efd9;
+
+  line-height:
+    1.8;
+
+}
+
+
+img {
+
+  display: block;
+
+  width: 100%;
+
+  object-fit: cover;
+
+}
+
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+button {
+
+  font-family: inherit;
+
+}
+
+
+
+/* ========================================
+VARIABLES
+======================================== */
+
+:root {
+
+  --cream:
+    #f7efd9;
+
+  --paper:
+    #fffaf0;
+
+  --white:
+    #fffdf7;
+
+  --black:
+    #242424;
+
+  --blue:
+    #70b7bb;
+
+  --deep-blue:
+    #23636a;
+
+  --orange:
+    #e96842;
+
+  --yellow:
+    #f5cc4f;
+
+  --green:
+    #78a989;
+
+  --red:
+    #c94e39;
+
+}
+
+
+
+/* ========================================
+HEADER
+======================================== */
+
+.header {
+
+  position: fixed;
+
+  z-index: 1000;
+
+  top: 0;
+
+  left: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding:
+    22px 5vw;
+
+  color:
+    white;
+
+  transition:
+    .35s ease;
+
+}
+
+
+.header.is-scrolled {
+
+  padding-top:
+    14px;
+
+  padding-bottom:
+    14px;
+
+  color:
+    var(--black);
+
+  background:
+    rgba(247, 239, 217, .94);
+
+  backdrop-filter:
+    blur(10px);
+
+  border-bottom:
+    2px solid var(--black);
+
+}
+
+
+
+/* LOGO */
+
+.logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+.logo-text {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+.logo-text span {
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .12em;
+
+}
+
+
+.logo-text strong {
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    22px;
+
+  font-weight:
+    500;
+
+}
+
+
+.logo-mark {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width:
+    39px;
+
+  height:
+    39px;
+
+  border:
+    2px solid currentColor;
+
+  border-radius:
+    50%;
+
+}
+
+
+
+/* NAV */
+
+.nav {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+}
+
+
+.nav a {
+
+  position: relative;
+
+}
+
+
+.nav a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -6px;
+
+  width: 0;
+
+  height: 3px;
+
+  background:
+    var(--yellow);
+
+  transition:
+    .25s ease;
+
+}
+
+
+.nav a:hover::after {
+
+  width: 100%;
+
+}
+
+
+
+/* MENU */
+
+.menu-button {
+
+  display: none;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  border:
+    2px solid currentColor;
+
+  border-radius:
+    50%;
+
+  background:
+    transparent;
+
+  color:
+    inherit;
+
+  cursor:
+    pointer;
+
+}
+
+
+.menu-button span {
+
+  display: block;
+
+  width:
+    18px;
+
+  height:
+    2px;
+
+  margin:
+    5px auto;
+
+  background:
+    currentColor;
+
+}
+
+
+
+/* ========================================
+HERO
+======================================== */
+
+.hero {
+
+  position: relative;
+
+  height:
+    100svh;
+
+  min-height:
+    650px;
+
+  overflow:
+    hidden;
+
+  color:
+    white;
+
+}
+
+
+.hero-image {
+
+  position: absolute;
+
+  inset: 0;
+
+}
+
+
+.hero-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  filter:
+    saturate(.75)
+    contrast(1.05);
+
+}
+
+
+.hero-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(0,0,0,.58),
+
+      rgba(0,0,0,.08)
+
+    );
+
+}
+
+
+
+/* HERO DECORATION */
+
+.hero-decoration {
+
+  position: absolute;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width:
+    82px;
+
+  height:
+    82px;
+
+  border:
+    3px solid var(--black);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--orange);
+
+  color:
+    white;
+
+  box-shadow:
+    5px 6px 0 var(--black);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    21px;
+
+}
+
+
+.hero-decoration-left {
+
+  top:
+    24%;
+
+  left:
+    6%;
+
+  transform:
+    rotate(-10deg);
+
+}
+
+
+.hero-decoration-right {
+
+  right:
+    8%;
+
+  bottom:
+    18%;
+
+  background:
+    var(--yellow);
+
+  color:
+    var(--black);
+
+  transform:
+    rotate(10deg);
+
+}
+
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+  position: absolute;
+
+  z-index: 3;
+
+  top:
+    50%;
+
+  left:
+    10vw;
+
+  transform:
+    translateY(-50%);
+
+}
+
+
+.hero-en {
+
+  margin-bottom:
+    20px;
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    11px;
+
+  letter-spacing:
+    .2em;
+
+}
+
+
+.hero-title-small {
+
+  display: block;
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    clamp(24px, 3vw, 42px);
+
+}
+
+
+.hero-title-main {
+
+  position: relative;
+
+  z-index: 1;
+
+  display: inline-block;
+
+  margin-top:
+    5px;
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    clamp(60px, 8vw, 115px);
+
+  font-weight:
+    500;
+
+  line-height:
+    1.2;
+
+}
+
+
+.hero-title-main::after {
+
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  left: 0;
+
+  bottom: 4px;
+
+  width:
+    100%;
+
+  height:
+    16px;
+
+  background:
+    var(--yellow);
+
+}
+
+
+.hero-line {
+
+  width:
+    100px;
+
+  height:
+    6px;
+
+  margin-top:
+    35px;
+
+  background:
+    var(--orange);
+
+}
+
+
+.hero-copy {
+
+  margin-top:
+    20px;
+
+  font-size:
+    16px;
+
+  font-weight:
+    700;
+
+}
+
+
+
+/* HERO BOTTOM */
+
+.hero-bottom {
+
+  position: absolute;
+
+  z-index: 3;
+
+  right:
+    5vw;
+
+  bottom:
+    32px;
+
+  left:
+    5vw;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    .12em;
+
+}
+
+
+
+/* ========================================
+COMMON
+======================================== */
+
+.section {
+
+  position: relative;
+
+  padding:
+    150px 8vw;
+
+}
+
+
+.section-en {
+
+  display: block;
+
+  margin-bottom:
+    14px;
+
+  color:
+    var(--orange);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .15em;
+
+}
+
+
+h2 {
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-weight:
+    500;
+
+}
+
+
+
+/* ========================================
+LOCKER LABEL
+======================================== */
+
+.sento-label {
+
+  position: absolute;
+
+  z-index: 10;
+
+  top:
+    60px;
+
+  left:
+    4vw;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  transform:
+    rotate(-2deg);
+
+}
+
+
+.sento-label-number {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width:
+    70px;
+
+  height:
+    86px;
+
+  padding-top:
+    13px;
+
+  border:
+    3px solid var(--black);
+
+  border-radius:
+    12px 12px 17px 17px;
+
+  background:
+    var(--orange);
+
+  color:
+    white;
+
+  box-shadow:
+    4px 5px 0 var(--black);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    25px;
+
+}
+
+
+.sento-label-number::before {
+
+  content: "";
+
+  position: absolute;
+
+  top:
+    7px;
+
+  left:
+    50%;
+
+  width:
+    9px;
+
+  height:
+    9px;
+
+  border:
+    2px solid var(--black);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--cream);
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.sento-label-number::after {
+
+  content: "";
+
+  position: absolute;
+
+  top:
+    -28px;
+
+  left:
+    50%;
+
+  width:
+    2px;
+
+  height:
+    28px;
+
+  background:
+    var(--black);
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.sento-label-name {
+
+  margin-top:
+    15px;
+
+  color:
+    var(--black);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .15em;
+
+  writing-mode:
+    vertical-rl;
+
+}
+
+
+
+/* COLOR */
+
+.sento-label-yellow {
+
+  transform:
+    rotate(2deg);
+
+}
+
+
+.sento-label-yellow
+.sento-label-number {
+
+  background:
+    var(--yellow);
+
+  color:
+    var(--black);
+
+}
+
+
+.sento-label-blue
+.sento-label-number {
+
+  background:
+    var(--blue);
+
+  color:
+    var(--black);
+
+}
+
+
+.sento-label-orange {
+
+  transform:
+    rotate(2deg);
+
+}
+
+
+.sento-label-orange
+.sento-label-number {
+
+  background:
+    var(--orange);
+
+}
+
+
+.sento-label-green
+.sento-label-number {
+
+  background:
+    var(--green);
+
+}
+
+
+
+/* ========================================
+ABOUT
+======================================== */
+
+.about {
+
+  min-height:
+    720px;
+
+  overflow:
+    hidden;
+
+  background:
+    var(--cream);
+
+}
+
+
+.about-inner {
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr .9fr;
+
+  gap:
+    10px;
+
+  max-width:
+    1050px;
+
+  margin:
+    0 auto;
+
+}
+
+
+.about-title h2 {
+
+  font-size:
+    clamp(52px, 6vw, 88px);
+
+  line-height:
+    1.45;
+
+}
+
+
+.about-text {
+
+  padding-top:
+    45px;
+
+}
+
+
+.about-lead {
+
+  color:
+    var(--deep-blue);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    28px;
+
+  line-height:
+    1.7;
+
+}
+
+
+.about-text p + p {
+
+  margin-top:
+    35px;
+
+  font-size:
+    16px;
+
+  font-weight:
+    500;
+
+  line-height:
+    2.2;
+
+}
+
+
+
+/* ========================================
+ABOUT MASCOT
+======================================== */
+
+.about-mascot {
+
+  position: absolute;
+
+  z-index: 5;
+
+  right:
+    6vw;
+
+  bottom:
+    18px;
+
+  width:
+    240px;
+
+  pointer-events:
+    none;
+
+}
+
+
+.about-mascot img {
+
+  width:
+    100%;
+
+  height:
+    auto;
+
+  object-fit:
+    contain;
+
+  animation:
+    mascot-float
+    4s ease-in-out infinite;
+
+}
+
+
+
+/* ========================================
+ABOUT DECORATION
+======================================== */
+
+.about-decoration {
+
+  position: absolute;
+
+  z-index: 1;
+
+  right:
+    2vw;
+
+  bottom:
+    20px;
+
+  width:
+    450px;
+
+  height:
+    430px;
+
+  pointer-events:
+    none;
+
+}
+
+
+.deco-yu {
+
+  position: absolute;
+
+  top:
+    -50px;
+
+  left:
+    120px;
+
+  color:
+    rgba(233, 104, 66, .28);
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    85px;
+
+  transform:
+    rotate(-7deg);
+
+}
+
+
+.deco-number {
+
+  position: absolute;
+
+  top:
+    35px;
+
+  right:
+    8px;
+
+  color:
+    rgba(112, 183, 187, .32);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    75px;
+
+  transform:
+    rotate(7deg);
+
+}
+
+
+.deco-steam {
+
+  position: absolute;
+
+  color:
+    rgba(112, 183, 187, .18);
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    60px;
+
+  animation:
+    steam-float
+    4s ease-in-out infinite;
+
+}
+
+
+.deco-steam-01 {
+
+  top:
+    20px;
+
+  left:
+    20px;
+
+  transform:
+    rotate(90deg);
+
+}
+
+
+.deco-steam-02 {
+
+  top:
+    145px;
+
+  right:
+    5px;
+
+  animation-delay:
+    .8s;
+
+}
+
+
+.deco-steam-03 {
+
+  left:
+    5px;
+
+  bottom:
+    70px;
+
+  animation-delay:
+    1.6s;
+
+}
+
+
+.deco-tiles {
+
+  position: absolute;
+
+  right:
+    15px;
+
+  bottom:
+    10px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 52px);
+
+  gap:
+    7px;
+
+}
+
+
+.deco-tiles span {
+
+  width:
+    52px;
+
+  height:
+    52px;
+
+  border-radius:
+    5px;
+
+  background:
+    rgba(112, 183, 187, .18);
+
+}
+
+
+
+/* SPEECH */
+
+.speech-bubble {
+
+  position: absolute;
+
+  z-index: 6;
+
+  right:
+    22vw;
+
+  bottom:
+    160px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width:
+    145px;
+
+  height:
+    145px;
+
+  border:
+    2px solid var(--black);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--yellow);
+
+  box-shadow:
+    4px 5px 0 var(--black);
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    17px;
+
+  line-height:
+    1.5;
+
+  text-align:
+    center;
+
+  transform:
+    rotate(5deg);
+
+}
+
+
+.speech-bubble::after {
+
+  content: "";
+
+  position: absolute;
+
+  right:
+    20px;
+
+  bottom:
+    -12px;
+
+  width:
+    25px;
+
+  height:
+    25px;
+
+  border-right:
+    2px solid var(--black);
+
+  border-bottom:
+    2px solid var(--black);
+
+  background:
+    var(--yellow);
+
+  clip-path:
+    polygon(0 0, 100% 0, 100% 100%);
+
+}
+
+
+
+/* ========================================
+SECTION HEADING
+======================================== */
+
+.section-heading {
+
+  display: flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    space-between;
+
+  max-width:
+    1050px;
+
+  margin:
+    0 auto 70px;
+
+}
+
+
+.section-heading h2 {
+
+  font-size:
+    clamp(45px, 6vw, 78px);
+
+  line-height:
+    1.35;
+
+}
+
+
+.heading-note {
+
+  padding-bottom:
+    10px;
+
+  font-size:
+    16px;
+
+  font-weight:
+    700;
+
+  line-height:
+    2;
+
+}
+
+
+
+/* ========================================
+PICKUP
+======================================== */
+
+.pickup {
+
+  background:
+    var(--paper);
+
+}
+
+
+.sento-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    28px;
+
+  max-width:
+    1100px;
+
+  margin:
+    auto;
+
+}
+
+
+
+/* CARD */
+
+.sento-card {
+
+  overflow:
+    hidden;
+
+  border:
+    3px solid var(--black);
+
+  box-shadow:
+    7px 8px 0 var(--black);
+
+  transition:
+    .25s ease;
+
+}
+
+
+.sento-card:hover {
+
+  box-shadow:
+    3px 4px 0 var(--black);
+
+  transform:
+    translate(4px, 4px);
+
+}
+
+
+.card-yellow {
+
+  background:
+    var(--yellow);
+
+}
+
+
+.card-blue {
+
+  background:
+    var(--blue);
+
+}
+
+
+.card-orange {
+
+  background:
+    var(--orange);
+
+}
+
+
+
+/* PHOTO */
+
+.card-photo {
+
+  position: relative;
+
+  height:
+    295px;
+
+  overflow:
+    hidden;
+
+  border-bottom:
+    3px solid var(--black);
+
+}
+
+
+.card-photo img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  transition:
+    transform .5s ease;
+
+}
+
+
+.sento-card:hover
+.card-photo img {
+
+  transform:
+    scale(1.05);
+
+}
+
+
+.card-number {
+
+  position: absolute;
+
+  top:
+    14px;
+
+  right:
+    14px;
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    60px;
+
+  height:
+    60px;
+
+  border:
+    2px solid var(--black);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--white);
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  transform:
+    rotate(7deg);
+
+}
+
+
+
+/* CARD BODY */
+
+.card-body {
+
+  padding:
+    25px;
+
+}
+
+
+.card-area {
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .08em;
+
+}
+
+
+.card-body h3 {
+
+  margin-top:
+    5px;
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    31px;
+
+  font-weight:
+    500;
+
+}
+
+
+.card-body > p {
+
+  margin-top:
+    13px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    500;
+
+  line-height:
+    2;
+
+}
+
+
+
+/* SCORE */
+
+.card-score {
+
+  margin-top:
+    22px;
+
+  padding:
+    14px 0;
+
+  border-top:
+    1px dashed var(--black);
+
+  border-bottom:
+    1px dashed var(--black);
+
+}
+
+
+.card-score div {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    15px;
+
+  font-size:
+    9px;
+
+}
+
+
+.card-score div + div {
+
+  margin-top:
+    5px;
+
+}
+
+
+.card-score strong {
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    .05em;
+
+}
+
+
+
+/* TAG */
+
+.tags {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap:
+    6px;
+
+  margin-top:
+    18px;
+
+}
+
+
+.tags span {
+
+  padding:
+    4px 9px;
+
+  border:
+    1px solid var(--black);
+
+  border-radius:
+    30px;
+
+  font-size:
+    8px;
+
+}
+
+
+
+/* FOOTER CARD */
+
+.card-footer {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-top:
+    20px;
+
+}
+
+
+.card-footer time {
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    8px;
+
+}
+
+
+.card-footer strong {
+
+  font-size:
+    25px;
+
+}
+
+
+
+/* MORE BUTTON */
+
+.more-button {
+
+  margin-top:
+    80px;
+
+  text-align:
+    center;
+
+}
+
+
+.more-button a {
+
+  display: inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    20px;
+
+  padding:
+    15px 24px;
+
+  border:
+    3px solid var(--black);
+
+  background:
+    var(--yellow);
+
+  box-shadow:
+    4px 5px 0 var(--black);
+
+  font-size:
+    11px;
+
+  font-weight:
+    900;
+
+  transition:
+    .2s;
+
+}
+
+
+.more-button a:hover {
+
+  box-shadow:
+    1px 2px 0 var(--black);
+
+  transform:
+    translate(3px, 3px);
+
+}
+
+
+
+/* ========================================
+BATH
+======================================== */
+
+.bath {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  background:
+    var(--blue);
+
+}
+
+
+.bath-photo {
+
+  position: relative;
+
+  min-height:
+    720px;
+
+  overflow:
+    hidden;
+
+}
+
+
+.bath-photo img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+}
+
+
+.bath-photo-mark {
+
+  position: absolute;
+
+  right:
+    30px;
+
+  bottom:
+    30px;
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    90px;
+
+  height:
+    90px;
+
+  border:
+    3px solid var(--black);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--yellow);
+
+  box-shadow:
+    5px 6px 0 var(--black);
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    38px;
+
+  transform:
+    rotate(-9deg);
+
+}
+
+
+.bath-content {
+
+  position: relative;
+
+  padding:
+    140px 8vw;
+
+}
+
+
+.bath-content
+.sento-label {
+
+  top:
+    55px;
+
+  left:
+    3vw;
+
+}
+
+
+.bath-content h2 {
+
+  font-size:
+    clamp(43px, 5vw, 70px);
+
+  line-height:
+    1.4;
+
+}
+
+
+.bath-copy {
+
+  margin-top:
+    30px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+}
+
+
+
+/* BATH LIST */
+
+.bath-list {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:
+    10px;
+
+  margin-top:
+    50px;
+
+}
+
+
+.bath-list a {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  padding:
+    17px;
+
+  border:
+    2px solid var(--black);
+
+  background:
+    rgba(255,255,255,.32);
+
+  transition:
+    .2s ease;
+
+}
+
+
+.bath-list a:hover {
+
+  background:
+    var(--yellow);
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+.bath-icon {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    45px;
+
+  height:
+    45px;
+
+  border:
+    2px solid var(--black);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--cream);
+
+  font-size:
+    20px;
+
+}
+
+
+.bath-list strong {
+
+  display: block;
+
+  font-size:
+    12px;
+
+}
+
+
+.bath-list small {
+
+  display: block;
+
+  margin-top:
+    2px;
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    7px;
+
+  letter-spacing:
+    .08em;
+
+}
+
+
+
+/* TEXT LINK */
+
+.text-link {
+
+  display: inline-block;
+
+  margin-top:
+    45px;
+
+  padding-bottom:
+    4px;
+
+  border-bottom:
+    3px solid var(--black);
+
+  font-size:
+    11px;
+
+  font-weight:
+    900;
+
+}
+
+
+
+/* ========================================
+JOURNAL
+======================================== */
+
+.journal {
+
+  background:
+    var(--cream);
+
+}
+
+
+.journal-list {
+
+  max-width:
+    1050px;
+
+  margin:
+    auto;
+
+  border-top:
+    2px solid var(--black);
+
+}
+
+
+.journal-list article {
+
+  border-bottom:
+    2px solid var(--black);
+
+}
+
+
+.journal-list a {
+
+  display: grid;
+
+  grid-template-columns:
+    110px 220px 1fr 35px;
+
+  gap:
+    30px;
+
+  align-items:
+    center;
+
+  padding:
+    25px 0;
+
+  transition:
+    .25s;
+
+}
+
+
+.journal-list a:hover {
+
+  padding-left:
+    10px;
+
+}
+
+
+.journal-list time {
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    9px;
+
+}
+
+
+.journal-image {
+
+  height:
+    140px;
+
+  overflow:
+    hidden;
+
+}
+
+
+.journal-image img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  transition:
+    .5s ease;
+
+}
+
+
+.journal-list article:hover
+.journal-image img {
+
+  transform:
+    scale(1.05);
+
+}
+
+
+.journal-category {
+
+  display: inline-block;
+
+  padding:
+    4px 9px;
+
+  background:
+    var(--orange);
+
+  color:
+    white;
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+}
+
+
+.journal-text h3 {
+
+  margin-top:
+    9px;
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    24px;
+
+  font-weight:
+    500;
+
+}
+
+
+.journal-text p {
+
+  margin-top:
+    5px;
+
+  font-size:
+    10px;
+
+}
+
+
+.journal-arrow {
+
+  font-size:
+    25px;
+
+}
+
+
+
+/* ========================================
+AREA
+======================================== */
+
+.area {
+
+  padding:
+    150px 8vw;
+
+  background:
+    var(--orange);
+
+}
+
+
+.area-inner {
+
+  position: relative;
+
+  max-width:
+    1100px;
+
+  margin:
+    auto;
+
+}
+
+
+.area-inner
+.sento-label {
+
+  top:
+    -70px;
+
+  left:
+    -60px;
+
+}
+
+
+.area h2 {
+
+  font-size:
+    clamp(48px, 6vw, 80px);
+
+  line-height:
+    1.35;
+
+}
+
+
+.area-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  margin-top:
+    70px;
+
+  border-top:
+    2px solid var(--black);
+
+  border-left:
+    2px solid var(--black);
+
+}
+
+
+.area-grid a {
+
+  min-height:
+    180px;
+
+  padding:
+    22px;
+
+  border-right:
+    2px solid var(--black);
+
+  border-bottom:
+    2px solid var(--black);
+
+  transition:
+    .2s;
+
+}
+
+
+.area-grid a:hover {
+
+  background:
+    var(--yellow);
+
+}
+
+
+.area-grid span {
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    18px;
+
+}
+
+
+.area-grid strong {
+
+  display: block;
+
+  margin-top:
+    30px;
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    27px;
+
+  font-weight:
+    500;
+
+}
+
+
+.area-grid small {
+
+  display: block;
+
+  margin-top:
+    5px;
+
+  font-size:
+    12px;
+
+  letter-spacing:
+    .12em;
+
+}
+
+
+
+/* ========================================
+INSTAGRAM
+======================================== */
+
+.instagram {
+
+  padding:
+    150px 8vw;
+
+  background:
+    var(--deep-blue);
+
+  color:
+    white;
+
+  text-align:
+    center;
+
+}
+
+
+.instagram-inner {
+
+  max-width:
+    720px;
+
+  margin:
+    auto;
+
+}
+
+
+.instagram-mark {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    65px;
+
+  height:
+    65px;
+
+  margin:
+    0 auto 25px;
+
+  border:
+    2px solid white;
+
+  border-radius:
+    50%;
+
+  font-size:
+    25px;
+
+}
+
+
+.instagram
+.section-en {
+
+  color:
+    var(--yellow);
+
+}
+
+
+.instagram h2 {
+
+  font-size:
+    clamp(40px, 5vw, 65px);
+
+  line-height:
+    1.5;
+
+}
+
+
+.instagram p {
+
+  margin-top:
+    25px;
+
+  font-size:
+    11px;
+
+}
+
+
+.instagram a {
+
+  display: inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    25px;
+
+  margin-top:
+    40px;
+
+  padding:
+    15px 24px;
+
+  border:
+    2px solid white;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  transition:
+    .25s;
+
+}
+
+
+.instagram a:hover {
+
+  background:
+    white;
+
+  color:
+    var(--deep-blue);
+
+}
+
+
+
+/* ========================================
+FOOTER
+======================================== */
+
+.footer {
+
+  padding:
+    65px 8vw 30px;
+
+  background:
+    var(--black);
+
+  color:
+    white;
+
+}
+
+
+.footer-logo {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+}
+
+
+.footer-logo span {
+
+  font-size:
+    9px;
+
+}
+
+
+.footer-logo strong {
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size:
+    25px;
+
+  font-weight:
+    500;
+
+}
+
+
+.footer-nav {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap:
+    25px;
+
+  margin-top:
+    45px;
+
+  font-family:
+    "DotGothic16",
+    sans-serif;
+
+  font-size:
+    9px;
+
+}
+
+
+.copyright {
+
+  margin-top:
+    55px;
+
+  font-size:
+    8px;
+
+  opacity:
+    .45;
+
+}
+
+
+
+/* ========================================
+ANIMATION
+======================================== */
+
+.fade-up {
+
+  opacity:
+    0;
+
+  transform:
+    translateY(30px);
+
+  transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
+
+
+.fade-up.is-visible {
+
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+
+@keyframes mascot-float {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-8px)
+      rotate(1deg);
+
+  }
+
+}
+
+
+
+@keyframes steam-float {
+
+  0%,
+  100% {
+
+    opacity:
+      .3;
+
+    transform:
+      translateY(0)
+      rotate(90deg);
+
+  }
+
+  50% {
+
+    opacity:
+      .08;
+
+    transform:
+      translateY(-12px)
+      rotate(90deg);
+
+  }
+
+}
+
+
+
+/* ========================================
+TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+
+  .nav {
+
+    display:
+      none;
+
+  }
+
+
+  .menu-button {
+
+    display:
+      block;
+
+  }
+
+
+  .about-inner {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      10px;
+
+  }
+
+
+  .about {
+
+    padding-bottom:
+      390px;
+
+  }
+
+
+  .about-mascot {
+
+    right:
+      9vw;
+
+    width:
+      210px;
+
+  }
+
+
+  .about-decoration {
+
+    right:
+      4vw;
+
+  }
+
+
+  .speech-bubble {
+
+    right:
+      30vw;
+
+    bottom:
+      170px;
+
+  }
+
+
+  .sento-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .bath {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .bath-photo {
+
+    min-height:
+      480px;
+
+  }
+
+
+  .area-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .journal-list a {
+
+    grid-template-columns:
+      90px 170px 1fr 25px;
+
+    gap:
+      20px;
+
+  }
+
+}
+
+
+
+/* ========================================
+SMARTPHONE
+======================================== */
+
+@media (max-width: 650px) {
+
+
+  .header {
+
+    padding:
+      15px 5vw;
+
+  }
+
+
+  .logo-text span {
+
+    display:
+      none;
+
+  }
+
+
+  .logo-text strong {
+
+    font-size:
+      17px;
+
+  }
+
+
+  .logo-mark {
+
+    width:
+      35px;
+
+    height:
+      35px;
+
+  }
+
+
+
+  /* HERO */
+
+  .hero {
+
+    min-height:
+      610px;
+
+  }
+
+
+  .hero-decoration {
+
+    display:
+      none;
+
+  }
+
+
+  .hero-content {
+
+    left:
+      7vw;
+
+    right:
+      7vw;
+
+  }
+
+
+  .hero-title-small {
+
+    font-size:
+      22px;
+
+  }
+
+
+  .hero-title-main {
+
+    font-size:
+      49px;
+
+  }
+
+
+  .hero-title-main::after {
+
+    height:
+      10px;
+
+  }
+
+
+  .hero-copy {
+
+    font-size:
+      13px;
+
+  }
+
+
+  .hero-bottom {
+
+    font-size:
+      7px;
+
+  }
+
+
+
+  /* COMMON */
+
+  .section {
+
+    padding:
+      110px 6vw;
+
+  }
+
+
+  .sento-label {
+
+    top:
+      45px;
+
+    left:
+      3vw;
+
+    transform:
+      scale(.8)
+      rotate(-2deg);
+
+    transform-origin:
+      top left;
+
+  }
+
+
+
+  /* ABOUT */
+
+  .about {
+
+    min-height:
+      auto;
+
+    padding-bottom:
+      360px;
+
+  }
+
+
+  .about-title h2 {
+
+    font-size:
+      48px;
+
+  }
+
+
+  .about-lead {
+
+    font-size:
+      23px;
+
+  }
+
+
+  .about-text {
+
+    padding-top:
+      10px;
+
+  }
+
+
+  .about-mascot {
+
+    right:
+      8vw;
+
+    bottom:
+      15px;
+
+    width:
+      170px;
+
+  }
+
+
+  .about-decoration {
+
+    right:
+      -35px;
+
+    bottom:
+      0;
+
+    width:
+      340px;
+
+    height:
+      310px;
+
+  }
+
+
+  .deco-yu {
+
+    left:
+      100px;
+
+    font-size:
+      60px;
+
+  }
+
+
+  .deco-number {
+
+    right:
+      15px;
+
+    font-size:
+      50px;
+
+  }
+
+
+  .deco-tiles {
+
+    grid-template-columns:
+      repeat(3, 40px);
+
+  }
+
+
+  .deco-tiles span {
+
+    width:
+      40px;
+
+    height:
+      40px;
+
+  }
+
+
+  .speech-bubble {
+
+    right:
+      auto;
+
+    left:
+      7vw;
+
+    bottom:
+      130px;
+
+    width:
+      110px;
+
+    height:
+      110px;
+
+    font-size:
+      13px;
+
+  }
+
+
+
+  /* SECTION HEADING */
+
+  .section-heading {
+
+    display:
+      block;
+
+    margin-bottom:
+      45px;
+
+  }
+
+
+  .section-heading h2 {
+
+    font-size:
+      45px;
+
+  }
+
+
+  .heading-note {
+
+    margin-top:
+      25px;
+
+  }
+
+
+
+  /* CARD */
+
+  .sento-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .card-photo {
+
+    height:
+      280px;
+
+  }
+
+
+
+  /* BATH */
+
+  .bath-photo {
+
+    min-height:
+      350px;
+
+  }
+
+
+  .bath-content {
+
+    padding:
+      100px 6vw;
+
+  }
+
+
+  .bath-content
+  .sento-label {
+
+    left:
+      3vw;
+
+  }
+
+
+  .bath-content h2 {
+
+    font-size:
+      43px;
+
+  }
+
+
+  .bath-list {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+
+  .bath-list a {
+
+    display:
+      block;
+
+    text-align:
+      center;
+
+  }
+
+
+  .bath-icon {
+
+    margin:
+      0 auto 8px;
+
+  }
+
+
+
+  /* JOURNAL */
+
+  .journal-list a {
+
+    grid-template-columns:
+      90px 1fr 20px;
+
+    gap:
+      15px;
+
+  }
+
+
+  .journal-list time {
+
+    grid-column:
+      1 / 2;
+
+  }
+
+
+  .journal-image {
+
+    grid-column:
+      1 / 2;
+
+    height:
+      100px;
+
+  }
+
+
+  .journal-text {
+
+    grid-column:
+      2 / 3;
+
+    grid-row:
+      1 / span 2;
+
+  }
+
+
+  .journal-arrow {
+
+    grid-column:
+      3;
+
+    grid-row:
+      1 / span 2;
+
+  }
+
+
+  .journal-text h3 {
+
+    font-size:
+      17px;
+
+  }
+
+
+  .journal-text p {
+
+    display:
+      none;
+
+  }
+
+
+
+  /* AREA */
+
+  .area {
+
+    padding:
+      110px 6vw;
+
+  }
+
+
+  .area-inner
+  .sento-label {
+
+    top:
+      -60px;
+
+    left:
+      -8px;
+
+  }
+
+
+  .area h2 {
+
+    font-size:
+      46px;
+
+  }
+
+
+  .area-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    margin-top:
+      50px;
+
+  }
+
+
+  .area-grid a {
+
+    min-height:
+      140px;
+
+    padding:
+      15px;
+
+  }
+
+
+  .area-grid strong {
+
+    font-size:
+      21px;
+
+  }
+
+
+
+  /* INSTAGRAM */
+
+  .instagram {
+
+    padding:
+      110px 6vw;
+
+  }
+
+
+  .instagram h2 {
+
+    font-size:
+      38px;
+
+  }
+
+
+
+  /* FOOTER */
+
+  .footer {
+
+    padding:
+      55px 6vw 25px;
+
+  }
+
+}
+
+
+
+/* ========================================
+MOBILE MENU
+======================================== */
+
+@media (max-width: 1000px) {
+
+
+  body.menu-open {
+
+    overflow:
+      hidden;
+
+  }
+
+
+  body.menu-open
+  .nav {
+
+    position: fixed;
+
+    z-index:
+      900;
+
+    top:
+      70px;
+
+    right:
+      0;
+
+    bottom:
+      0;
+
+    left:
+      0;
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      25px;
+
+    padding:
+      50px 8vw;
+
+    border-top:
+      2px solid var(--black);
+
+    background:
+      var(--cream);
+
+    color:
+      var(--black);
+
+    font-size:
+      17px;
+
+  }
+
+}
+
+/* ==================================================
+   ABOUT マスコット＋吹き出し
+   ※ style.css 最下部に追加
+================================================== */
+
+
+/* ------------------------------
+   マスコットエリア全体
+------------------------------ */
+
+.about-mascot-area {
+  position: absolute;
+
+  right: 5vw;
+  bottom: 15px;
+
+  width: 430px;
+  height: 390px;
+
+  z-index: 20;
+  pointer-events: none;
+}
+
+
+/* ------------------------------
+   マスコット
+------------------------------ */
+
+.about-mascot-area .about-mascot {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 230px;
+
+  z-index: 3;
+
+  /* 既存CSSをリセット */
+  top: auto;
+  left: auto;
+  margin: 0;
+}
+
+
+.about-mascot-area .about-mascot img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  animation:
+    mascotTalkFloat 4s ease-in-out infinite;
+}
+
+
+/* ------------------------------
+   吹き出し
+------------------------------ */
+
+.about-mascot-area .speech-bubble {
+  position: absolute;
+
+  /*
+   * ↓ここを変更すると
+   * 吹き出し位置を調整できます
+   */
+  top: 45px;
+  left: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 170px;
+  height: 145px;
+
+  padding: 20px;
+
+  margin: 0;
+
+  background: var(--yellow);
+
+  border: 3px solid var(--black);
+
+  border-radius: 50%;
+
+  box-shadow:
+    5px 6px 0 var(--black);
+
+  color: var(--black);
+
+  font-family:
+    "Kiwi Maru",
+    serif;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.55;
+
+  text-align: center;
+
+  z-index: 5;
+
+  transform: rotate(-2deg);
+}
+
+
+/* ------------------------------
+   吹き出しの尻尾
+------------------------------ */
+
+.about-mascot-area .speech-bubble::before {
+  content: "";
+
+  position: absolute;
+
+  /*
+   * 右下からマスコット方向へ
+   */
+  right: 3px;
+  bottom: -26px;
+
+  width: 48px;
+  height: 48px;
+
+  background: var(--yellow);
+
+  border-right: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 10%,
+      100% 100%
+    );
+
+  transform: rotate(13deg);
+
+  z-index: -1;
+}
+
+
+/* 尻尾と吹き出し本体の境界線を隠す */
+
+.about-mascot-area .speech-bubble::after {
+  content: "";
+
+  position: absolute;
+
+  right: 15px;
+  bottom: -3px;
+
+  width: 50px;
+  height: 23px;
+
+  background: var(--yellow);
+
+  transform: rotate(5deg);
+
+  z-index: 1;
+}
+
+
+/* ------------------------------
+   マスコットのゆるい動き
+------------------------------ */
+
+@keyframes mascotTalkFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+
+  .about-mascot-area {
+    right: 4vw;
+    bottom: 10px;
+
+    width: 380px;
+    height: 350px;
+  }
+
+
+  .about-mascot-area .about-mascot {
+    width: 205px;
+  }
+
+
+  .about-mascot-area .speech-bubble {
+    top: 55px;
+    left: 15px;
+
+    width: 145px;
+    height: 125px;
+
+    font-size: 15px;
+  }
+
+}
+
+
+/* ==================================================
+   SMARTPHONE
+================================================== */
+
+@media (max-width: 650px) {
+
+  .about-mascot-area {
+    right: 4vw;
+    bottom: 5px;
+
+    width: 330px;
+    height: 300px;
+  }
+
+
+  .about-mascot-area .about-mascot {
+    right: 0;
+    bottom: 0;
+
+    width: 165px;
+  }
+
+
+  .about-mascot-area .speech-bubble {
+    top: 65px;
+    left: 20px;
+
+    width: 125px;
+    height: 105px;
+
+    padding: 12px;
+
+    border-width: 2px;
+
+    box-shadow:
+      3px 4px 0 var(--black);
+
+    font-size: 13px;
+  }
+
+
+  .about-mascot-area .speech-bubble::before {
+    right: 0;
+    bottom: -20px;
+
+    width: 38px;
+    height: 38px;
+
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+  }
+
+}
+/* ==================================================
+   ABOUT マスコット位置調整
+   吹き出しの尻尾に近づける
+   ※ style.css 最下部に追加
+================================================== */
+
+
+/* PC */
+.about-mascot-area .about-mascot {
+  right: 100px;
+  bottom: 20px;
+
+  /* マスコットサイズは維持 */
+  width: 230px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+
+  .about-mascot-area .about-mascot {
+    right: 75px;
+    bottom: 15px;
+
+    width: 205px;
+  }
+
+}
+
+
+/* ==================================================
+   SMARTPHONE
+================================================== */
+
+@media (max-width: 650px) {
+
+  .about-mascot-area .about-mascot {
+    right: 55px;
+    bottom: 10px;
+
+    width: 165px;
+  }
+
+}
+
+/* ========================================
+ABOUT マスコット全体を少し右へ
+======================================== */
+
+.about-mascot-area {
+  right: 0;
+}
+
+/* ==================================================
+   PAGE TURN ANIMATION
+   本のページが左側からめくれるような演出
+================================================== */
+
+.page-turn-section {
+  position: relative;
+
+  /*
+   * 3D変形に奥行きを持たせる
+   */
+  transform-style: preserve-3d;
+
+  /*
+   * 左端をページの綴じ部分として扱う
+   */
+  transform-origin: left center;
+
+  /*
+   * アニメーション中の描画を安定させる
+   */
+  backface-visibility: hidden;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/*
+ * 親側にperspectiveを指定できない構造なので
+ * セクション自身にtransformPerspectiveを
+ * GSAPから与える
+ */
+
+ /* ==================================================
+   PAGE TURN RIGHT HIGHLIGHT
+   ページめくり時の右端の光
+================================================== */
+
+.page-turn-highlight {
+  position: absolute;
+
+  z-index: 49;
+
+  top: 0;
+  right: 0;
+
+  width: 110px;
+  height: 100%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform-origin: right center;
+
+  background:
+    linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.20) 24%,
+      rgba(255, 255, 255, 0.06) 58%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  mix-blend-mode: soft-light;
+
+  filter: blur(0.5px);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* 紙の反りっぽい細い光 */
+
+.page-turn-highlight::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 12px;
+
+  width: 2px;
+  height: 100%;
+
+  background:
+    rgba(255, 255, 255, 0.48);
+
+}
+
+
+/* 右端にほんの少し影も追加 */
+
+.page-turn-highlight::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 18px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      270deg,
+      rgba(36, 36, 36, 0.08),
+      rgba(36, 36, 36, 0)
+    );
+}
+
+
+/* SPは少し控えめ */
+
+@media (max-width: 650px) {
+
+  .page-turn-highlight {
+    width: 70px;
+  }
+
+}
