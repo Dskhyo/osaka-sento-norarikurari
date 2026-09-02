@@ -25,7 +25,7 @@ const finishLoading =
 
 
     const minimumDisplayTime =
-      900;
+      1200;
 
 
     const remainingTime =
@@ -51,7 +51,7 @@ const finishLoading =
             }
 
           },
-          600
+          850
         );
 
       },
@@ -61,14 +61,14 @@ const finishLoading =
   };
 
 
-if (document.readyState === "complete") {
+if (document.readyState !== "loading") {
 
   finishLoading();
 
 } else {
 
   window.addEventListener(
-    "load",
+    "DOMContentLoaded",
     finishLoading,
     { once: true }
   );
@@ -79,7 +79,7 @@ if (document.readyState === "complete") {
 /* 読み込み失敗時も画面を塞ぎ続けないための安全策 */
 window.setTimeout(
   finishLoading,
-  5000
+  4000
 );
 
 
