@@ -124,7 +124,7 @@ body.is-loading {
   visibility: visible;
 
   transition:
-    visibility .8s ease;
+    visibility 1.6s ease;
 }
 
 
@@ -152,7 +152,7 @@ body.is-loading {
     );
 
   transition:
-    transform .78s cubic-bezier(.76, 0, .24, 1);
+    transform 1.56s cubic-bezier(.76, 0, .24, 1);
 }
 
 
@@ -204,8 +204,8 @@ body:not(.is-loading) .loading-screen::after {
   text-align: center;
 
   transition:
-    opacity .25s ease,
-    transform .25s ease;
+    opacity .5s ease,
+    transform .5s ease;
 }
 
 
@@ -243,7 +243,7 @@ body:not(.is-loading) .loading-inner {
   background: var(--paper);
 
   animation:
-    loading-character-soak 1.2s ease-in-out infinite;
+    loading-character-soak 2.4s ease-in-out infinite;
 }
 
 
@@ -332,28 +332,28 @@ body:not(.is-loading) .loading-inner {
   transform: rotate(90deg);
 
   animation:
-    loading-steam-rise 1.15s ease-out infinite;
+    loading-steam-rise 2.3s ease-out infinite;
 }
 
 
 .loading-steam-01 {
   left: 55px;
 
-  animation-delay: .1s;
+  animation-delay: .2s;
 }
 
 
 .loading-steam-02 {
   right: 85px;
 
-  animation-delay: .3s;
+  animation-delay: .6s;
 }
 
 
 .loading-steam-03 {
   right: 49px;
 
-  animation-delay: .5s;
+  animation-delay: 1s;
 }
 
 
@@ -367,7 +367,7 @@ body:not(.is-loading) .loading-inner {
   letter-spacing: .16em;
 
   animation:
-    loading-text-appear .55s .35s both;
+    loading-text-appear 1.1s .7s both;
 }
 
 

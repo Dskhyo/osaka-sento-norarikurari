@@ -25,7 +25,7 @@ const finishLoading =
 
 
     const minimumDisplayTime =
-      1200;
+      2400;
 
 
     const remainingTime =
@@ -51,7 +51,7 @@ const finishLoading =
             }
 
           },
-          850
+          1700
         );
 
       },
@@ -79,7 +79,7 @@ if (document.readyState !== "loading") {
 /* 読み込み失敗時も画面を塞ぎ続けないための安全策 */
 window.setTimeout(
   finishLoading,
-  4000
+  8000
 );
 
 
