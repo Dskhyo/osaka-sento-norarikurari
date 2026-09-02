@@ -1,4 +1,90 @@
 /* ========================================
+LOADING
+======================================== */
+
+const loadingScreen =
+  document.querySelector(
+    ".loading-screen"
+  );
+
+
+let isLoadingComplete =
+  false;
+
+
+const finishLoading =
+  () => {
+
+    if (isLoadingComplete) {
+      return;
+    }
+
+
+    isLoadingComplete =
+      true;
+
+
+    const minimumDisplayTime =
+      900;
+
+
+    const remainingTime =
+      Math.max(
+        0,
+        minimumDisplayTime - performance.now()
+      );
+
+
+    window.setTimeout(
+      () => {
+
+        document.body.classList.remove(
+          "is-loading"
+        );
+
+
+        window.setTimeout(
+          () => {
+
+            if (loadingScreen) {
+              loadingScreen.hidden = true;
+            }
+
+          },
+          600
+        );
+
+      },
+      remainingTime
+    );
+
+  };
+
+
+if (document.readyState === "complete") {
+
+  finishLoading();
+
+} else {
+
+  window.addEventListener(
+    "load",
+    finishLoading,
+    { once: true }
+  );
+
+}
+
+
+/* 読み込み失敗時も画面を塞ぎ続けないための安全策 */
+window.setTimeout(
+  finishLoading,
+  5000
+);
+
+
+
+/* ========================================
 HEADER SCROLL
 ======================================== */
 

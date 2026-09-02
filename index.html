@@ -43,7 +43,62 @@
 </head>
 
 
-<body>
+<body class="is-loading">
+
+
+<!-- ========================================
+LOADING
+======================================== -->
+
+<div
+  class="loading-screen"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+>
+
+  <div class="loading-inner">
+
+    <div
+      class="loading-visual"
+      aria-hidden="true"
+    >
+
+      <span class="loading-steam loading-steam-01">
+        〜
+      </span>
+
+      <span class="loading-steam loading-steam-02">
+        〜
+      </span>
+
+      <span class="loading-mark">
+        ♨
+      </span>
+
+    </div>
+
+    <p class="loading-text">
+      湯わかし中<span aria-hidden="true">…</span>
+    </p>
+
+    <div
+      class="loading-bar"
+      aria-hidden="true"
+    >
+      <span></span>
+    </div>
+
+  </div>
+
+</div>
+
+<noscript>
+  <style>
+    body.is-loading { overflow: auto; }
+    .loading-screen { display: none; }
+  </style>
+</noscript>
 
 
 <!-- ========================================
