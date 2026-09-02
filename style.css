@@ -119,6 +119,10 @@ body.is-loading {
 
   padding: 24px;
 
+  overflow: hidden;
+
+  perspective: 1200px;
+
   color: var(--black);
 
   visibility: visible;
@@ -151,13 +155,28 @@ body.is-loading {
       rgba(36, 36, 36, .06) 24px
     );
 
-  transition:
-    transform 1.56s cubic-bezier(.76, 0, .24, 1);
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      100% 97%,
+      80% 100%,
+      60% 97%,
+      40% 100%,
+      20% 97%,
+      0 100%
+    );
+
+  will-change:
+    transform,
+    clip-path;
 }
 
 
 .loading-screen::before {
   left: 0;
+
+  transform-origin: top left;
 
   border-right:
     1px solid rgba(36, 36, 36, .12);
@@ -166,6 +185,8 @@ body.is-loading {
 
 .loading-screen::after {
   right: 0;
+
+  transform-origin: top right;
 
   border-left:
     1px solid rgba(36, 36, 36, .12);
@@ -179,12 +200,14 @@ body:not(.is-loading) .loading-screen {
 
 
 body:not(.is-loading) .loading-screen::before {
-  transform: translateX(-102%);
+  animation:
+    loading-noren-left 1.56s cubic-bezier(.22, .75, .18, 1) both;
 }
 
 
 body:not(.is-loading) .loading-screen::after {
-  transform: translateX(102%);
+  animation:
+    loading-noren-right 1.56s cubic-bezier(.22, .75, .18, 1) both;
 }
 
 
@@ -419,6 +442,144 @@ body:not(.is-loading) .loading-inner {
 }
 
 
+@keyframes loading-noren-left {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      rotateZ(0)
+      skewY(0);
+  }
+
+  34% {
+    clip-path:
+      polygon(
+        0 0,
+        100% 0,
+        100% 50%,
+        88% 65%,
+        70% 81%,
+        50% 93%,
+        25% 98%,
+        0 96%
+      );
+
+    transform:
+      translate3d(-2%, -2%, 25px)
+      rotateZ(-1deg)
+      skewY(2deg);
+  }
+
+  70% {
+    clip-path:
+      polygon(
+        0 0,
+        100% 0,
+        100% 18%,
+        84% 34%,
+        64% 52%,
+        42% 64%,
+        20% 72%,
+        0 70%
+      );
+
+    transform:
+      translate3d(-10%, -28%, 45px)
+      rotateZ(-4deg)
+      skewY(3deg);
+  }
+
+  100% {
+    clip-path:
+      polygon(
+        0 0,
+        100% 0,
+        100% 18%,
+        84% 34%,
+        64% 52%,
+        42% 64%,
+        20% 72%,
+        0 70%
+      );
+
+    transform:
+      translate3d(-22%, -112%, 60px)
+      rotateZ(-6deg)
+      skewY(4deg);
+  }
+
+}
+
+
+@keyframes loading-noren-right {
+
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      rotateZ(0)
+      skewY(0);
+  }
+
+  38% {
+    clip-path:
+      polygon(
+        0 50%,
+        0 0,
+        100% 0,
+        100% 96%,
+        75% 98%,
+        50% 93%,
+        30% 81%,
+        12% 65%
+      );
+
+    transform:
+      translate3d(2%, -3%, 22px)
+      rotateZ(1.2deg)
+      skewY(-2deg);
+  }
+
+  72% {
+    clip-path:
+      polygon(
+        0 18%,
+        0 0,
+        100% 0,
+        100% 70%,
+        80% 72%,
+        58% 64%,
+        36% 52%,
+        16% 34%
+      );
+
+    transform:
+      translate3d(11%, -30%, 42px)
+      rotateZ(4.5deg)
+      skewY(-3deg);
+  }
+
+  100% {
+    clip-path:
+      polygon(
+        0 18%,
+        0 0,
+        100% 0,
+        100% 70%,
+        80% 72%,
+        58% 64%,
+        36% 52%,
+        16% 34%
+      );
+
+    transform:
+      translate3d(24%, -112%, 58px)
+      rotateZ(7deg)
+      skewY(-4deg);
+  }
+
+}
+
+
 @media (prefers-reduced-motion: reduce) {
 
   .loading-screen,
@@ -430,7 +591,9 @@ body:not(.is-loading) .loading-inner {
 
   .loading-character,
   .loading-steam,
-  .loading-text {
+  .loading-text,
+  body:not(.is-loading) .loading-screen::before,
+  body:not(.is-loading) .loading-screen::after {
     animation: none;
   }
 
