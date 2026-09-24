@@ -1117,6 +1117,25 @@ body:not(.is-loading)
 }
 
 
+.hero-scroll {
+
+  position: absolute;
+
+  bottom:
+    68px;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  white-space:
+    nowrap;
+
+}
+
+
 @keyframes hero-scroll-bounce {
 
   0%,
